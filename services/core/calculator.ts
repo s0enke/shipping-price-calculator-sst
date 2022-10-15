@@ -27,6 +27,7 @@ export function getMostInexpensiveRate(weight_g: number, length_cm: number, widt
 
 interface ShippingRate {
   name: string,
+  rate_eur: number,
   max: {
     weight_g: number,
     length_cm: number,
@@ -39,6 +40,7 @@ interface ShippingRate {
 
 export const paeckchen_s = {
   name: '2 kg - Päckchen S',
+  rate_eur: 3.99,
   max: {
     weight_g: 2000,
     length_cm: 35,
@@ -50,6 +52,7 @@ export const paeckchen_s = {
 } as ShippingRate;
 export const paeckchen_m = {
   name: '5 kg - Päckchen M',
+  rate_eur: 4.79,
   max: {
     weight_g: 5000,
     length_cm: 60,
@@ -61,6 +64,7 @@ export const paeckchen_m = {
 } as ShippingRate;
 export const paket_2_kg = {
   name: '2 kg - Paket',
+  rate_eur: 5.49,
   max: {
     weight_g: 2000,
     length_cm: 60,
@@ -71,7 +75,8 @@ export const paket_2_kg = {
   tracking: false,
 } as ShippingRate;
 export const paket_5_kg = {
-  rate: '5 kg - Paket',
+  name: '5 kg - Paket',
+  rate_eur: 6.99,
   max: {
     weight_g: 5000,
     length_cm: 120,
@@ -83,6 +88,7 @@ export const paket_5_kg = {
 };
 export const paket_10_kg = {
   name: '10 kg - Paket',
+  rate_eur: 9.49,
   max: {
     weight_g: 10000,
     length_cm: 120,
@@ -94,6 +100,7 @@ export const paket_10_kg = {
 } as ShippingRate;
 export const packet_31_5_kg = {
   name: '31.5 kg - Paket',
+  rate_eur: 16.49,
   max: {
     weight_g: 31500,
     length_cm: 120,
