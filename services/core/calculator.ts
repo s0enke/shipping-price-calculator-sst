@@ -26,7 +26,7 @@ export function getMostInexpensiveRate(weight_g: number, length_cm: number, widt
 }
 
 interface ShippingRate {
-  rate: string,
+  name: string,
   max: {
     weight_g: number,
     length_cm: number,
@@ -38,7 +38,7 @@ interface ShippingRate {
 }
 
 export const paeckchen_s = {
-  rate: '2 kg - Päckchen S',
+  name: '2 kg - Päckchen S',
   max: {
     weight_g: 2000,
     length_cm: 35,
@@ -47,9 +47,9 @@ export const paeckchen_s = {
   },
   liability_eur: null,
   tracking: false,
-};
+} as ShippingRate;
 export const paeckchen_m = {
-  rate: '5 kg - Päckchen M',
+  name: '5 kg - Päckchen M',
   max: {
     weight_g: 5000,
     length_cm: 60,
@@ -58,9 +58,9 @@ export const paeckchen_m = {
   },
   liability_eur: null,
   tracking: false,
-};
+} as ShippingRate;
 export const paket_2_kg = {
-  rate: '2 kg - Paket',
+  name: '2 kg - Paket',
   max: {
     weight_g: 2000,
     length_cm: 60,
@@ -69,7 +69,7 @@ export const paket_2_kg = {
   },
   liability_eur: 500,
   tracking: false,
-};
+} as ShippingRate;
 export const paket_5_kg = {
   rate: '5 kg - Paket',
   max: {
@@ -82,7 +82,7 @@ export const paket_5_kg = {
   tracking: true,
 };
 export const paket_10_kg = {
-  rate: '10 kg - Paket',
+  name: '10 kg - Paket',
   max: {
     weight_g: 10000,
     length_cm: 120,
@@ -91,9 +91,9 @@ export const paket_10_kg = {
   },
   liability_eur: 500,
   tracking: true,
-};
+} as ShippingRate;
 export const packet_31_5_kg = {
-  rate: '31.5 kg - Paket',
+  name: '31.5 kg - Paket',
   max: {
     weight_g: 31500,
     length_cm: 120,
@@ -102,7 +102,7 @@ export const packet_31_5_kg = {
   },
   liability_eur: 500,
   tracking: true,
-};
+} as ShippingRate;
 
 export function getPossibleRates(rate: string): ShippingRate[] {
   switch (rate) {
