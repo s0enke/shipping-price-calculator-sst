@@ -1,0 +1,5 @@
+{
+  "name": "shipping-price-calculator",
+  "region": "eu-central-1",
+  "main": "stacks/index.js"
+}
