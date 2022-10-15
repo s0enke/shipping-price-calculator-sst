@@ -1,4 +1,4 @@
-import { Api, RemixSite } from "@serverless-stack/resources";
+import { Api, RemixSite, Config } from "@serverless-stack/resources";
 
 export function MyStack({ stack }) {
   const api = new Api(stack, "api", {
@@ -8,6 +8,10 @@ export function MyStack({ stack }) {
   });
   stack.addOutputs({
     ApiEndpoint: api.url,
+  });
+
+  new Config.Parameter(stack, "API_URL", {
+    value: api.url,
   });
 
   const site = new RemixSite(stack, "Site", {
