@@ -1,4 +1,13 @@
-export function getMostInexpensiveRate(weight_g: number, length_cm: number, width_cm: number, height_cm: number) {
+export function getMostInexpensiveRate(weight_g: number, length_cm: number, width_cm: number, height_cm: number): string {
+
+  if (weight_g > 31500) {
+    throw new RangeError();
+  }
+
+  if (length_cm > 120 || width_cm > 60 || height_cm > 60) {
+    throw new RangeError();
+  }
+
   if (weight_g > 10000) {
     return '31.5 kg - Paket';
   }

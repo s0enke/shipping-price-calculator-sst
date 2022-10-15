@@ -19,9 +19,12 @@ describe("shipping calculator", () => {
 
     expect(getMostInexpensiveRate(10000, 60, 30, 15)).toEqual('10 kg - Paket');
     expect(getMostInexpensiveRate(10001, 60, 30, 15)).toEqual('31.5 kg - Paket');
+  });
 
-    expect(getMostInexpensiveRate(31501, 60, 30, 15)).toThrow(TypeError);
-
-
+  it("should throw an error with values out of range", () => {
+    expect(() => { getMostInexpensiveRate(31501, 120, 60, 60)}).toThrow(RangeError);
+    expect(() => { getMostInexpensiveRate(31500, 121, 60, 60)}).toThrow(RangeError);
+    expect(() => { getMostInexpensiveRate(31500, 120, 61, 60)}).toThrow(RangeError);
+    expect(() => { getMostInexpensiveRate(31500, 120, 60, 61)}).toThrow(RangeError);
   });
 });
