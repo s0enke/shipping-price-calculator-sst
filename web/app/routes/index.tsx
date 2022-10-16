@@ -59,7 +59,7 @@ export default function Index() {
             <input
               name="width_cm"
               type="number"
-              max="120"
+              max="60"
               className="w-16 py-2 px-2 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500"
               defaultValue={searchParams.get("width_cm") as string}
             />
@@ -67,7 +67,7 @@ export default function Index() {
             <input
               name="height_cm"
               type="number"
-              max="120"
+              max="60"
               className="w-16 py-2 px-2 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500"
               defaultValue={searchParams.get("height_cm") as string}
             />
