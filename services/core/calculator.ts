@@ -55,10 +55,10 @@ export const paeckchen_s = {
   tracking: false,
 } as ShippingRate;
 export const paeckchen_m = {
-  name: "5 kg - Päckchen M",
+  name: "2 kg - Päckchen M",
   rate_eur: 4.79,
   max: {
-    weight_g: 5000,
+    weight_g: 2000,
     length_cm: 60,
     width_cm: 30,
     height_cm: 15,
