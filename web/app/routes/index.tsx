@@ -3,7 +3,7 @@ import { json } from "@remix-run/node";
 
 export async function loader({ request }) {
   const url = new URL(request.url);
-  const weight_kg = parseInt(url.searchParams.getAll("weight_kg"));
+  const weight_kg = parseFloat(url.searchParams.getAll("weight_kg"));
   const length_cm = parseInt(url.searchParams.getAll("length_cm"));
   const width_cm = parseInt(url.searchParams.getAll("width_cm"));
   const height_cm = parseInt(url.searchParams.getAll("height_cm"));
