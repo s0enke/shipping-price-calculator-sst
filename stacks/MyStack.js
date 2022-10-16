@@ -16,6 +16,9 @@ export function MyStack({ stack }) {
 
   const site = new RemixSite(stack, "Site", {
     path: "web/",
+    environment: {
+      API_URL: api.url,
+    },
   });
 
   // Add the site's URL to stack output

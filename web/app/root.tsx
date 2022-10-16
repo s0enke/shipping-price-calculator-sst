@@ -27,7 +27,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="leading-normal tracking-normal text-indigo-400 m-6 bg-cover bg-fixed">
+      <body className="bg-gray-100 leading-normal tracking-normal text-indigo-400 m-6 bg-cover bg-fixed">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
