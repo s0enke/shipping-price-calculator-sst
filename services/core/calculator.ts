@@ -23,6 +23,9 @@ export function getMostInexpensiveRate(
   if (weight_g > 2000) {
     return "5 kg - Paket";
   }
+  if (length_cm > 60 || width_cm > 30 || height_cm > 15) {
+    return "5 kg - Paket";
+  }
   if (length_cm > 35 || width_cm > 25 || height_cm > 10) {
     return "2 kg - Päckchen M";
   }

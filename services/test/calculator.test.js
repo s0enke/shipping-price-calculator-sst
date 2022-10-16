@@ -30,6 +30,8 @@ describe("shipping calculator", () => {
     expect(getMostInexpensiveRate(2001, 60, 30, 15)).toEqual("5 kg - Paket");
     expect(getMostInexpensiveRate(2001, 61, 30, 15)).toEqual("5 kg - Paket");
 
+    expect(getMostInexpensiveRate(1000, 60, 31, 15)).toEqual("5 kg - Paket");
+
     expect(getMostInexpensiveRate(5000, 60, 30, 15)).toEqual("5 kg - Paket");
     expect(getMostInexpensiveRate(5001, 60, 30, 15)).toEqual("10 kg - Paket");
 
