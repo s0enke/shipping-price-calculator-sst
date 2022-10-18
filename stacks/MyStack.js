@@ -20,9 +20,4 @@ export function MyStack({ stack }) {
       API_URL: api.url,
     },
   });
-
-  // Add the site's URL to stack output
-  stack.addOutputs({
-    URL: site.url,
-  });
 }
