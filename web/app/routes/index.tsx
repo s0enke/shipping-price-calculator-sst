@@ -90,7 +90,7 @@ export default function Index() {
           </h1>
         </div>
         <div>
-          <div className="columns-1 md:columns-1 lg:columns-xl">
+          <div className="columns-1 md:columns-1">
             {shippingRates.map((shippingRate) => (
               <div
                 key={shippingRate.name}
