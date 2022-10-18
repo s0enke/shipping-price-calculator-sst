@@ -1,4 +1,10 @@
-import { Api, RemixSite, Config } from "@serverless-stack/resources";
+import {
+  Api,
+  RemixSite,
+  NextjsSite,
+  Config,
+} from "@serverless-stack/resources";
+import { aws_cloudfront } from "aws-cdk-lib";
 
 export function MyStack({ stack }) {
   const api = new Api(stack, "api", {
@@ -18,6 +24,18 @@ export function MyStack({ stack }) {
     path: "web/",
     environment: {
       API_URL: api.url,
+    },
+    // cdk: {
+    //   cachePolicies: {
+    //     serverCachePolicy: aws_cloudfront.CachePolicy.CACHING_OPTIMIZED,
+    //   },
+    // },
+  });
+
+  new NextjsSite(stack, "NextSite", {
+    path: "frontend-next/",
+    environment: {
+      NEXT_PUBLIC_API_URL: api.url,
     },
   });
 }
