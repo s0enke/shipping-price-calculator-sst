@@ -32,10 +32,14 @@ export function MyStack({ stack }) {
     // },
   });
 
-  new NextjsSite(stack, "NextSite", {
+  const nextJsSite = new NextjsSite(stack, "NextSite", {
     path: "frontend-next/",
     environment: {
       NEXT_PUBLIC_API_URL: api.url,
     },
+  });
+
+  stack.addOutputs({
+    NextjsSite: nextJsSite.url,
   });
 }
