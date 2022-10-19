@@ -25,11 +25,6 @@ export function MyStack({ stack }) {
     environment: {
       API_URL: api.url,
     },
-    // cdk: {
-    //   cachePolicies: {
-    //     serverCachePolicy: aws_cloudfront.CachePolicy.CACHING_OPTIMIZED,
-    //   },
-    // },
   });
 
   const nextJsSite = new NextjsSite(stack, "NextSite", {
