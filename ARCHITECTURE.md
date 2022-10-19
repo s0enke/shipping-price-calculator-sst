@@ -33,6 +33,10 @@ Differences noted during exploration of different frameworks:
 
 As a result, for this scenario, plain React seem to make the most sense.
 
+## Testing
+
+Unit and integration testing is done via `npm test` with the native [SST testing infrastructure](https://docs.sst.dev/advanced/testing) which makes use of vitest.
+
 ## Impact
 
  - no managed services / infrastructure apart from AWS is needed
