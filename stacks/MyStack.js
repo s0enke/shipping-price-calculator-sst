@@ -27,6 +27,10 @@ export function MyStack({ stack }) {
     },
   });
 
+  stack.addOutputs({
+    RemixSite: site.url,
+  });
+
   const nextJsSite = new NextjsSite(stack, "NextSite", {
     path: "frontend-next/",
     environment: {
