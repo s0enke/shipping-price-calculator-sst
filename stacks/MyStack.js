@@ -20,15 +20,15 @@ export function MyStack({ stack }) {
     value: api.url,
   });
 
-  const site = new RemixSite(stack, "Site", {
-    path: "web/",
+  const frontendRemix = new RemixSite(stack, "FrontEndRemix", {
+    path: "frontend-remix/",
     environment: {
       API_URL: api.url,
     },
   });
 
   stack.addOutputs({
-    RemixSite: site.url,
+    RemixSite: frontendRemix.url,
   });
 
   const nextJsSite = new NextjsSite(stack, "NextSite", {
