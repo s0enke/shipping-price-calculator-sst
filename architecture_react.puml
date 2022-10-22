@@ -1,0 +1,26 @@
+@startuml
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Dynamic.puml
+
+!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v13.1/dist
+!include AWSPuml/AWSCommon.puml
+!include AWSPuml/General/all.puml
+!include AWSPuml/NetworkingContentDelivery/all.puml
+!include AWSPuml/Storage/all.puml
+!include AWSPuml/ApplicationIntegration/all.puml
+!include AWSPuml/Compute/all.puml
+
+title "Shipping Costs Calculator with SST and React"
+
+actor User as VISITOR
+
+CloudFront(CDN, "Content Delivery Distribution", "")
+SimpleStorageService(STATIC_CONTENT_BUCKET, "Static Content Storage", "")
+APIGatewayEndpoint(CALCULATOR_ENDPOINT, "API Endpoint for Calculator", "")
+Lambda(CALCULATOR, "Calculator Function", "")
+
+VISITOR -> CDN: visits
+CDN -> STATIC_CONTENT_BUCKET: shields and caches
+VISITOR --> CALCULATOR_ENDPOINT: gets shipping costs via XHR
+CALCULATOR_ENDPOINT -> CALCULATOR
